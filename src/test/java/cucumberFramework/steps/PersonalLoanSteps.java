@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 //import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -22,11 +23,11 @@ public class PersonalLoanSteps {
 	@Before()
 	public void setup() {
 	System.setProperty("webdriver.chrome.driver",
-				"/Users/girthiha/Documents/Test Automation/CucumberFramework/src/test/java/cucumberFramework/resources/chromedriver");
+				"src/test/java/cucumberFramework/resources/chromedriver");
 		this.driver = new ChromeDriver();
 		
 //		System.setProperty("webdriver.gecko.driver",
-//				"/Users/pnafria/Documents/Learn/CucumberFramework/CucumberFramework/src/test/java/CucumberFramework/resources/geckodriver");
+//				"src/test/java/CucumberFramework/resources/geckodriver");
 //		this.driver = new FirefoxDriver();
 		this.driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 //		this.driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -181,6 +182,6 @@ public class PersonalLoanSteps {
 
 	private void waitUntilPageIsVisible(String str) {
 		str = "//div[@data-test-id='"+str+"']";
-		WebElement div = (new WebDriverWait(this.driver, 10)).until(ExpectedConditions.elementToBeClickable(By.xpath(str)));
+		WebElement div = (new WebDriverWait(this.driver, 15)).until(ExpectedConditions.elementToBeClickable(By.xpath(str)));
 	}
 }

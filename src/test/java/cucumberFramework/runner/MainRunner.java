@@ -9,10 +9,10 @@ import cucumber.api.junit.Cucumber;
 
 @CucumberOptions (
 		features = {"src/test/java/cucumberFramework/feature"},
-		glue = {"steps"},
+		glue = {"cucumberFramework.steps"},
 		monochrome = true,
-		tags = {}
-	//	plugin = {"pretty", "html:target/cucumber", "json:target/cucumber.json", "com.cucumber.listener.ExtenCucumberFormatter:output/report.html"}
+		tags = {},
+		plugin = {"pretty", "html:target/cucumber", "json:target/cucumber.json", "com.cucumber.listener.ExtentCucumberFormatter:output/report.html"}
 		)
 
 public class MainRunner {
